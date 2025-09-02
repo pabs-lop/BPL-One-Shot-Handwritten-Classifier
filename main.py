@@ -8,6 +8,7 @@ import os
 import numpy as np
 import imageio.v3 as iio
 from scipy.spatial.distance import cdist
+from typing import Callable, List
 
 
 class OneShotClassifier:
