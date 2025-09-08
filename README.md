@@ -8,7 +8,7 @@ Inspired by the original research work from [Brenden Lake's GitHub repository](h
 
 [Art by Danqing Wang]
 
-> Here is a brief explanation of what is [BPL algorithm](http://www.ctvnews.ca/sci-tech/new-algorithm-lets-machines-learn-like-humans-1.2695230).
+> Here is a brief explanation of [BPL algorithm](http://www.ctvnews.ca/sci-tech/new-algorithm-lets-machines-learn-like-humans-1.2695230).
 
 ----
 
