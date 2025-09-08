@@ -84,7 +84,7 @@ run01/images/image_test_03.png run01/images/image_train_03.png
 2.  **Run the classifier**:
 
 ```bash
-python main.py # the number of runs to test (default is 200)
+python main.py # the number of runs to test (default=20)
 ```
     *   The script will read the data from `all_runs/` and perform classification. (add more data for more runs)
     *   It displays error rates for each run, concluding with the average across all runs.
