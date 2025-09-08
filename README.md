@@ -26,6 +26,13 @@ The classification is performed using a pixel-coordinate-based approach and reli
 
 To run this project, ensure you have Python installed along with the dependencies specified on the pip file:
 
+- Install dependencies
+
+```bash
+pip install numpy imageio scipy
+```
+
+or run the `requirements.txt` file:
 ```bash
 pip install -r requirements.txt
 ```
