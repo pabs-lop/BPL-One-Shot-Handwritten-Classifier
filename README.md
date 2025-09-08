@@ -34,11 +34,6 @@ To run this project, ensure you have Python installed along with the dependencie
 - Install dependencies:
 
 ```bash
-pip install numpy imageio scipy
-```
-
-- or run the `requirements.txt` file:
-```bash
 pip install -r requirements.txt
 ```
 
@@ -61,7 +56,7 @@ The project expects a specific directory structure for input data:
 
 ### Data Organization
 
-*   **Store your handwritten character images** in the `all_runs/` directory, organized into subfolders (`run01`, `run02`, etc.).
+*   **Store your handwritten character images** in the `all_runs/` directory, organized into subfolders (`run01`, `run02`, etc.). *Note*: Add more character images to create more runs.
 *   **Ensure each run subfolder** (e.g., `run01/`) contains a file named `class_labels.txt`.
 *   **The `class_labels.txt` format** should be a list of pairs, each line representing one training/test example: `image_test_path image_train_path`.
 
@@ -75,7 +70,6 @@ run01/images/image_test_02.png run01/images/image_train_02.png
 run01/images/image_test_03.png run01/images/image_train_03.png
 ...
 ```
-
 ---
 
 ## How to Use
@@ -92,7 +86,6 @@ run01/images/image_test_03.png run01/images/image_train_03.png
 ```bash
 python main.py # the number of runs to test (default is 200)
 ```
-
     *   The script will read the data from `all_runs/` and perform classification. (add more data for more runs)
     *   It displays error rates for each run, concluding with the average across all runs.
 
