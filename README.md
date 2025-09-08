@@ -24,10 +24,10 @@ The classification is performed using a pixel-coordinate-based approach and reli
 
 ## Requirements
 
-To run this project, ensure you have Python installed along with the following dependencies:
+To run this project, ensure you have Python installed along with the dependencies specified on the pip file:
 
 ```bash
-pip install numpy scikit-learn pandas matplotlib
+pip install -r requirements.txt
 ```
 
 ### Python Version
