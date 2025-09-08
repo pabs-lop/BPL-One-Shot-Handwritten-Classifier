@@ -22,24 +22,25 @@ The classification is performed using a pixel-coordinate-based approach and reli
 
 ---
 
+### Python Version
+
+Python 3.8 or higher is required.
+
+
 ## Requirements
 
 To run this project, ensure you have Python installed along with the dependencies specified on the pip file:
 
-- Install dependencies
+- Install dependencies:
 
 ```bash
 pip install numpy imageio scipy
 ```
 
-or run the `requirements.txt` file:
+- or run the `requirements.txt` file:
 ```bash
 pip install -r requirements.txt
 ```
-
-### Python Version
-
-Python 3.8 or higher is required.
 
 ---
 
@@ -89,10 +90,10 @@ run01/images/image_test_03.png run01/images/image_train_03.png
 2.  **Run the classifier**:
 
 ```bash
-python main.py [--runs n]   # Replace 'n' with the number of runs to test (default is 20)
+python main.py # the number of runs to test (default is 200)
 ```
 
-    *   The script will read the data from `all_runs/` and perform classification.
+    *   The script will read the data from `all_runs/` and perform classification. (add more data for more runs)
     *   It displays error rates for each run, concluding with the average across all runs.
 
 3.  **Output**:
