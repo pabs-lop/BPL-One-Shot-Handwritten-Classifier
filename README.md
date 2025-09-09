@@ -8,18 +8,11 @@
 ## Table of Contents
 
   - [About the Project](#about-the-project)
-    - [What is it?](#what-is-it)
-    - [How It Works](#how-it-works)
   - [Features](#features)
   - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Folder Structure](#folder-structure)
   - [Data Organization](#data-organization)
   - [Running Script](#running-script)
-  - [Expectations When Running This Script](#expectations-when-running-this-script)
   - [Acknowledgments](#acknowledgments)
-    - [Research Paper](#research-paper)
-    - [Original GitHub Code](#original-github-code)
   - [License](#license)
 
 ---
