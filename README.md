@@ -21,7 +21,9 @@
 
 ### What is it?
 
-This project is a **Python implementation** of a one-shot handwritten character classifier using **Bayesian Program Learning (BPL)** and the **Modified Hausdorff Distance** as a similarity metric, simulating human-level concept learning by classifying new characters based on just **one example**. The system implements a **one-shot learning** classifier for handwritten characters, learning probabilistic programs from a small number of examples and using them to classify new, unseen characters.
+This project presents an implementation of One-Shot Learning with Bayesian Program Learning (BPL), a machine learning approach that enables models to recognize patterns or concepts from just one example. In traditional machine learning, models typically require extensive training data to learn and generalize. However, BPL allows models to learn from a single example by constructing probabilistic programs that represent the relationships between variables and uncertain states.
+
+In this project, we apply One-Shot Learning with BPL to handwritten character classification. By leveraging the Bayesian network representation of these relationships, our system learns to recognize new characters based on just one example. This approach enables novel applications in handwriting recognition and machine learning-based writing tools.
 
 ### How It Works
 
