@@ -7,8 +7,6 @@
 
 ## Table of Contents
 
-- [One-Shot Handwritten Character Classifier with Bayesian Program Learning](#one-shot-handwritten-character-classifier-with-bayesian-program-learning)
-  - [Table of Contents](#table-of-contents)
   - [About the Project](#about-the-project)
     - [What is it?](#what-is-it)
     - [How It Works](#how-it-works)
