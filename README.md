@@ -1,45 +1,65 @@
 # One-Shot Handwritten Character Classifier with Bayesian Program Learning
 
-This project is a python implementation of a one-shot handwritten character classifier utilizing **Bayesian Program Learning (BPL)** and a modified Hausdorff distance as its similarity metric. This script assesses the ability to classify new characters based on a single example, simulating a "one-shot" learning scenario.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
+
+---
+
+## Table of Contents
+
+- [One-Shot Handwritten Character Classifier with Bayesian Program Learning](#one-shot-handwritten-character-classifier-with-bayesian-program-learning)
+  - [Table of Contents](#table-of-contents)
+  - [About the Project](#about-the-project)
+    - [What is it?](#what-is-it)
+    - [How It Works](#how-it-works)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Folder Structure](#folder-structure)
+  - [Data Organization](#data-organization)
+  - [Running Script](#running-script)
+  - [Expectations When Running This Script](#expectations-when-running-this-script)
+  - [Acknowledgments](#acknowledgments)
+    - [Research Paper](#research-paper)
+    - [Original GitHub Code](#original-github-code)
+  - [License](#license)
+
+---
+
+## About the Project
+
+### What is it?
+
+This project is a **Python implementation** of a one-shot handwritten character classifier using **Bayesian Program Learning (BPL)** and the **Modified Hausdorff Distance** as a similarity metric, simulating human-level concept learning by classifying new characters based on just **one example**. The system implements a **one-shot learning** classifier for handwritten characters, learning probabilistic programs from a small number of examples and using them to classify new, unseen characters.
+
+### How It Works
+
+1. **Data Preparation**: Handwritten character images are organized into labeled runs.
+2. **Program Learning**: For each example, a probabilistic program representing the character's structure is learned.
+3. **Classification**: New characters are classified by comparing them to previously learned programs using the **Modified Hausdorff Distance (MHD)**.
+
+---
 
 ## Features
 
-*   **One-Shot Learning:** Classify new characters using only a single example.
-*   **Probabilistic Program Induction:** Uses the core BPL algorithm to learn and classify handwritten characters.
-*   **Flexible Data Preparation:** The system requires preparing datasets using a specific folder structure for easy processing.
+- **One-shot learning**: Classify new characters using only a single example.
+- **Probabilistic Program Induction**: Uses BPL to learn and classify handwritten characters.
+- **Flexible data preparation** with a customizable folder structure. The system requires preparing datasets using a specific folder structure for easy processing
 
 ---
 
-## Approach & Methodology
+## Getting Started
 
-The classifier works by learning generative models of handwritten characters from a small number of examples and then using these models to classify new, unseen instances. Key steps include:
+### Prerequisites
 
-1.  **Data Preparation:** Prepare your handwritten character data according to the structure described below.
-2.  **Program Learning:** For each provided example (test character), learn a probabilistic program representing its structure.
-3.  **Classification:** Use the learned programs to classify new characters presented later.
-
-The classification is performed using a pixel-coordinate-based approach and relies on the Modified Hausdorff Distance (MHD) metric for comparing character structures.
-
----
-
-### Python Version
-
-Python 3.8 or higher is required.
-
-
-## Requirements
-
-To run this project, ensure you have Python installed along with the dependencies specified on the pip file:
-
-- Install dependencies:
+- Python 3.8 or higher
+- `requirements.txt` (install via pip)
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Directory Structure
+### Folder Structure
 
 The project expects a specific directory structure for input data:
 
@@ -54,13 +74,13 @@ The project expects a specific directory structure for input data:
 └── 📘 main.py              # Main implementation script
 ```
 
-### Data Organization
+---
+
+## Data Organization
 
 *   **Store your handwritten character images** in the `all_runs/` directory, organized into subfolders (`run01`, `run02`, etc.). *Note*: Add more character images to create more runs.
 *   **Ensure each run subfolder** (e.g., `run01/`) contains a file named `class_labels.txt`.
 *   **The `class_labels.txt` format** should be a list of pairs, each line representing one training/test example: `image_test_path image_train_path`.
-
-### Example class_labels.txt Format
 
 Here is a concrete example of what the `class_labels.txt` file should look like for one run:
 
@@ -70,56 +90,54 @@ run01/images/image_test_02.png run01/images/image_train_02.png
 run01/images/image_test_03.png run01/images/image_train_03.png
 ...
 ```
----
 
-## How to Use
+## Running Script
 
-### Step-by-step Instructions:
-
-1.  **Prepare your data**:
-    *   Organize your handwritten character images into individual run folders within `all_runs/`.
-    *   Create a `class_labels.txt` file for each run, specifying the test and training image paths (see example above). Ensure you have at least one valid test-train pair per run.
-    *   Place all your data runs (folders like `run01`, `run02`) inside the `all_runs/` directory.
-
-2.  **Run the classifier**:
+To run the classifier, use:
 
 ```bash
-python main.py # the number of runs to test (default=20)
+python main.py [number_of_runs]
 ```
-    *   The script will read the data from `all_runs/` and perform classification. (add more data for more runs)
-    *   It displays error rates for each run, concluding with the average across all runs.
 
-3.  **Output**:
-    *   The program output shows error rates for each run and the final average.
-        *Example Output (assuming 20 runs):*
-    ```bash
-    Running one-shot handwritten character classifier
-    
-    [START OF RESULTS]
-    Run 01: Error rate X.X%
-    Run 02: Error rate X.X%
-    ...
-    Run 20: Error rate Y.Y%
-    
-    [RESULT] Average error rate across *n* independent experiments (where n is the number of runs): Z.Z%
-    ```
-    *   The average error rate `Z.Z%` is calculated based on the results from all specified runs. Each run uses a distinct set of test examples.
+- The script reads data from `all_runs/` and performs classification.
+- It displays error rates for each run, concluding with the average across all runs.
 
 ---
 
-## Citation & Acknowledgments
+## Expectations When Running This Script
 
-This project adapts the core principles of the Bayesian Program Learning framework.
+- **Input**: Organized data in `all_runs/` with `class_labels.txt` files.
+- **Output**:
+  - Error rates for each run
+  - Final average error rate across all runs
 
-### Research Paper:
+Example Output:
+```bash
+Running one-shot handwritten character classifier
+
+[INFO] Run 01: Error rate X.X%
+[INFO] Run 02: Error rate X.X%
+...
+[INFO] Run 20: Error rate Y.Y%
+
+[RESULT] Average error rate across *n* independent experiments (where n is the number of runs): Z.Z%
+```
+
+---
+
+## Acknowledgments
+
+This project builds on the **Bayesian Program Learning (BPL)** framework from academic research.
+
+### Research Paper
 
 > Lake, B. M., Salakhutdinov, R., and Tenenbaum, J. B. (2015).  
 > **Human-level concept learning through probabilistic program induction**.  
 > [*Science*, 350(6266), 1332-1338.](https://www.science.org/doi/abs/10.1126/science.aab3050)
 
-### Original GitHub Code:
+### Original GitHub Code
 
-> This implementation is based on the MATLAB code from [Brenden Lake's BPL repository](https://github.com/brendenlake/BPL).
+> This is an adaptation based on the MATLAB code from [Brenden Lake's BPL repository](https://github.com/brendenlake/BPL).
 
 ---
 
